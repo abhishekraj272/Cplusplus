@@ -13,7 +13,7 @@ void printArray(int *arr, int n)
 
 void bubbleSort(int *arr, int n)
 {
-    int i, j, temp;
+    int i, j, temp,flag=-1;
     for(i=0; i<n; ++i)
     {
         for(j=0; j<n-i-1; ++j)
@@ -23,8 +23,11 @@ void bubbleSort(int *arr, int n)
                 temp = *(arr+j);
                 *(arr+j) = *(arr+j+1);
                 *(arr+j+1) = temp;
+                flag=0;
             }
         }
+        if(flag==-1)
+            break;
     }
 }
 
